@@ -1,0 +1,257 @@
+/* ================= GLOBAL ================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  height: 100vh;
+  overflow: hidden;
+  color: white;
+}
+
+/* ================= ANIMATED BACKGROUND ================= */
+
+.background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1c1c3c);
+  background-size: 400% 400%;
+  animation: gradientFlow 12s ease infinite;
+  z-index: -1;
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ================= SCREEN TRANSITIONS ================= */
+
+.screen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  transform: scale(0.98);
+}
+
+.screen.active {
+  opacity: 1;
+  pointer-events: all;
+  transform: scale(1);
+}
+
+/* ================= GLASS CARD ================= */
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.4);
+}
+
+.center-card {
+  width: 350px;
+  text-align: center;
+}
+
+.settings-card {
+  width: 420px;
+  text-align: center;
+}
+
+.game-card {
+  width: 520px;
+}
+
+/* ================= TITLES ================= */
+
+.game-title {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.section-title {
+  margin-bottom: 20px;
+}
+
+/* ================= BUTTONS ================= */
+
+.btn {
+  padding: 12px 28px;
+  margin: 10px;
+  border-radius: 12px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: white;
+  background: rgba(255,255,255,0.15);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  background: rgba(255,255,255,0.3);
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, #00f5ff, #8a2be2);
+}
+
+.primary-btn:hover {
+  box-shadow: 0 0 20px #00f5ff;
+}
+
+.ghost-btn {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.5);
+}
+
+/* ================= OPTION ACTIVE STATE ================= */
+
+.option-btn.active {
+  background: linear-gradient(135deg, #00f5ff, #8a2be2);
+  box-shadow: 0 0 15px #00f5ff;
+  transform: scale(1.05);
+}
+
+/* ================= SETTINGS LAYOUT ================= */
+
+.settings-block {
+  margin-bottom: 25px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ================= GAME BOARD ================= */
+
+.board {
+  margin: 30px auto;
+  width: 360px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.cell {
+  width: 110px;
+  height: 110px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 42px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.cell:hover {
+  background: rgba(255,255,255,0.35);
+  transform: scale(1.05);
+}
+
+/* ================= GAME HEADER ================= */
+
+.game-header {
+  text-align: center;
+}
+
+.status-text {
+  margin-top: 15px;
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+/* ================= SCOREBOARD ================= */
+
+.scoreboard {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.score-box {
+  background: rgba(255,255,255,0.15);
+  padding: 10px 15px;
+  border-radius: 12px;
+  text-align: center;
+  width: 30%;
+}
+
+.score-label {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.score-value {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* ================= CONTROLS ================= */
+
+.game-controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* ================= MODAL ================= */
+
+.modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal-content {
+  width: 350px;
+  text-align: center;
+  animation: popIn 0.3s ease;
+}
+
+@keyframes popIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.modal-actions {
+  margin-top: 20px;
+                   }
