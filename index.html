@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Elite Tic Tac Toe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Background Layer -->
+<div class="background"></div>
+
+<!-- ================= HOME SCREEN ================= -->
+<section id="home-screen" class="screen active">
+  <div class="glass-card center-card">
+    <h1 class="game-title">Tic Tac Toe</h1>
+
+    <button id="start-btn" class="btn primary-btn">
+      <span>Start Game</span>
+    </button>
+  </div>
+</section>
+
+<!-- ================= MODE SCREEN ================= -->
+<section id="mode-screen" class="screen">
+  <div class="glass-card center-card">
+
+    <h2 class="section-title">Choose Mode</h2>
+
+    <div class="button-group">
+      <button id="two-player-btn" class="btn mode-btn">
+        2 Players
+      </button>
+
+      <button id="computer-btn" class="btn mode-btn">
+        Vs Computer
+      </button>
+    </div>
+
+    <button id="back-home-btn" class="btn ghost-btn">
+      ← Back
+    </button>
+
+  </div>
+</section>
+
+<!-- ================= SETTINGS SCREEN ================= -->
+<section id="settings-screen" class="screen">
+  <div class="glass-card settings-card">
+
+    <h2 class="section-title">Game Settings</h2>
+
+    <!-- Symbol Selection -->
+    <div class="settings-block">
+      <h3>Select Your Symbol</h3>
+      <div class="button-group">
+        <button class="btn option-btn symbol-btn" data-symbol="X">X</button>
+        <button class="btn option-btn symbol-btn" data-symbol="O">O</button>
+      </div>
+    </div>
+
+    <!-- Difficulty Selection -->
+    <div class="settings-block">
+      <h3>Select Difficulty</h3>
+      <div class="button-group">
+        <button class="btn option-btn difficulty-btn" data-level="easy">Easy</button>
+        <button class="btn option-btn difficulty-btn" data-level="medium">Medium</button>
+        <button class="btn option-btn difficulty-btn" data-level="hard">Hard</button>
+      </div>
+    </div>
+
+    <div class="settings-actions">
+      <button id="start-game-btn" class="btn primary-btn" disabled>
+        Start Match
+      </button>
+
+      <button id="back-mode-btn" class="btn ghost-btn">
+        ← Back
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= GAME SCREEN ================= -->
+<section id="game-screen" class="screen">
+
+  <div class="glass-card game-card">
+
+    <!-- Top Bar -->
+    <div class="game-header">
+
+      <div class="scoreboard">
+        <div class="score-box">
+          <span class="score-label">Player X</span>
+          <span id="score-x" class="score-value">0</span>
+        </div>
+
+        <div class="score-box">
+          <span class="score-label">Draws</span>
+          <span id="score-draw" class="score-value">0</span>
+        </div>
+
+        <div class="score-box">
+          <span class="score-label">Player O</span>
+          <span id="score-o" class="score-value">0</span>
+        </div>
+      </div>
+
+      <div id="status-text" class="status-text">
+        Turn: X
+      </div>
+
+    </div>
+
+    <!-- Game Board -->
+    <div id="board" class="board">
+      <!-- 9 cells will be generated via JS -->
+    </div>
+
+    <!-- Bottom Controls -->
+    <div class="game-controls">
+      <button id="restart-btn" class="btn control-btn">
+        Restart
+      </button>
+
+      <button id="home-btn" class="btn ghost-btn">
+        Home
+      </button>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= WINNER MODAL ================= -->
+<div id="result-modal" class="modal hidden">
+  <div class="modal-content glass-card">
+
+    <h2 id="result-title">Winner</h2>
+    <p id="result-message">Player X Wins!</p>
+
+    <div class="modal-actions">
+      <button id="play-again-btn" class="btn primary-btn">
+        Play Again
+      </button>
+
+      <button id="close-modal-btn" class="btn ghost-btn">
+        Close
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<!-- ================= AUDIO (OPTIONAL SFX) ================= -->
+<audio id="click-sound" src="sounds/click.mp3"></audio>
+<audio id="win-sound" src="sounds/win.mp3"></audio>
+<audio id="draw-sound" src="sounds/draw.mp3"></audio>
+
+<script src="script.js"></script>
+</body>
+  </html>
